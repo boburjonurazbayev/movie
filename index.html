@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main class="main">
+      <div class="container">
+        <!-- Movie search -->
+        <form class="movie__form">
+          <input class="movie__search" type="text" placeholder="Search ..." />
+
+          <button class="movie__search-button" type="submit">Search</button>
+        </form>
+        <!-- Movie list -->
+
+        <ul class="movie__list">
+          Loading
+        </ul>
+        <!-- Movie button -->
+
+        <div class="buttons">
+          <button class="prev__btn" type="button">Prev</button>
+
+          <button class="next__btn" type="button">Next</button>
+        </div>
+      </div>
+    </main>
+    <!-- Movies template -->
+
+    <template id="movie__list-template">
+      <li class="movie__item">
+        <img class="movie__poster" src="" alt="" width="200" height="300" />
+
+        <p class="movie__title"></p>
+
+        <time class="movie__year"></time>
+      </li>
+    </template>
+    <template> </template>
+
+    <script src="./js/utils.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
