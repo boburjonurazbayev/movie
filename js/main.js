@@ -21,8 +21,8 @@ function renderMovie(array, node) {
 
   array.forEach((element) => {
     const movieTemplate = elMovieListTemplate.cloneNode(true);
-
-    movieTemplate.querySelector(".movie__poster").src = element.Poster;
+    if(element.Poster !== "N/A") {movieTemplate.querySelector(".movie__poster").src = element.Poster;}
+    
     movieTemplate.querySelector(".movie__title").textContent = element.Title;
     movieTemplate.querySelector(".movie__year").textContent = element.Year;
 
@@ -42,6 +42,7 @@ async function getMovie() {
     );
     const data = await response.json();
     const movieArray = data?.Search;
+    
     totalResults = data?.totalResults;
     lastPage = Math.ceil(totalResults / filmsNumberOnePage);
 
@@ -60,6 +61,8 @@ async function getMovie() {
     } else {
       elMovieNextButton.disabled = false;
     }
+
+    console.log(movieArray);
   } catch (err) {
     elMovieList.textContent = "Xatolik yuz berdi";
   } finally {
